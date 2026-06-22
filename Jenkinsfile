@@ -15,17 +15,23 @@ pipeline{
 
      stage ('AWS_credential') {
         steps{
-        //    withCredentials([
-        //             usernamePassword(
-        //                 credentialsId: 'AWS_access_key',
-        //                 usernameVariable: 'AWS_ACCESS_KEY_ID',
-        //                 passwordVariable: 'AWS_SECRET_ACCESS_KEY'
-        //             )
-        //     ])
-            sh'''
-              terraform init  
-              terraform plan 
-            '''
+           withCredentials([
+                    usernamePassword(
+                        credentialsId: 'AWS_access_key',
+                        usernameVariable: 'AWS_ACCESS_KEY_ID',
+                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                    )
+            ]) {
+                 sh'''
+                   aws sts get-caller-identity
+                 
+                   terraform init  
+                   terraform plan 
+                 
+                 '''
+
+            }
+            
         }      
      }
 
