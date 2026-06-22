@@ -15,4 +15,14 @@ pipeline{
 
   }
 
+  stages {
+    stage ('Terraform') {
+        steps{
+           sh'''
+            terraform -version 
+           '''
+        }      
+    }
+  }
+
 }
