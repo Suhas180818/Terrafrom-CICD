@@ -15,13 +15,13 @@ pipeline{
 
      stage ('AWS_credential') {
         steps{
-           withCredentials([
-                    usernamePassword(
-                        credentialsId: 'AWS_access_key',
-                        usernameVariable: 'AWS_ACCESS_KEY_ID',
-                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
-                    )
-            ])
+        //    withCredentials([
+        //             usernamePassword(
+        //                 credentialsId: 'AWS_access_key',
+        //                 usernameVariable: 'AWS_ACCESS_KEY_ID',
+        //                 passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+        //             )
+        //     ])
             sh'''
               terraform init  
               terraform plan 
