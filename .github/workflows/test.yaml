@@ -1,4 +1,4 @@
-name: my First WorkFlow 
+name: myfirstworkflow 
 
 on: 
   workflow_dispatch  
@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest  
     steps: 
       - name: checkout 
-        runs: ls -lrt  
-        
+        run: ls -lrt  
+
       - name: echo command 
-        runs: echo "This is my first job"
+        run: | 
+          echo "This is my first job"
