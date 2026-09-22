@@ -10,7 +10,14 @@ jobs:
     steps: 
       - name: checkout 
         run: ls -lrt  
+<<<<<<< HEAD:.github/workflows/test.yaml
 
       - name: echo command 
         run: | 
           echo "This is my first job"
+=======
+        
+      - name: echo command 
+        run
+        : echo "This is my first job"
+>>>>>>> 3cb7bda95414bf48bf286d45b4177cb02f2d65c0:.github/workflows/test.yml
